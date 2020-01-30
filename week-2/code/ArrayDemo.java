@@ -31,11 +31,13 @@
 
 class ArrayDemo {
     public static void main(String[] args) {
+        final int SIZE = 10;
+        
         // declares an array of integers
         int[] anArray;
 
         // allocates memory for 10 integers
-        anArray = new int[10];
+        anArray = new int[SIZE];
            
         // initialize first element
         anArray[0] = 100;
