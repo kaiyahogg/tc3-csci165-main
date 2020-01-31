@@ -1,3 +1,12 @@
+//Kaiya Hogg Patrick Temple
+
+//Imported classes
+import java.util.Scanner;               //scans files
+import java.io.File;                    //for the object type file
+import java.io.FileNotFoundException;   //for problems regarding not being able to find the file
+import java.io.FileWriter;              //writes to a new file
+import java.io.IOException;             //for problems regarding writing a new file
+
 public class Tickets{
 
     public static void main(String[] args){
@@ -28,15 +37,67 @@ public class Tickets{
             Submit only Java source code files. Also submit valid_tix.txt   
 
         */
+        //scanner throwin into try/catch
+        try{
+            
+            File ticketlist = new File("tickets.txt"); //opens file scanner to scan tickets.txt
 
-        String  ticket  = "123454";                            
-        String  last = ticket.substring(ticket.length() - 1);                                                   
-        int     last_digit = Integer.valueOf(last);
-        String  reduced_ticket = ticket.substring(0, ticket.length() - 1);
-        int     ticket_number = Integer.valueOf(reduced_ticket);
-        int     remainder = ticket_number % 7; 
-        boolean validity = remainder == last_digit; 
-        String  format = "Original Ticket #: %s\nLast Digit: %d\nReduced Ticket #: %d\nRemainder: %d\nValidity: %b\n";
-        System.out.printf(format, ticket, last_digit, ticket_number, remainder, validity);  
+            Scanner checker = new Scanner(ticketlist);
+
+            FileWriter validTix = new FileWriter("validtix.txt");
+
+            
+            //counters set            
+            int counter = 0;
+            int validTixCounter = 0; 
+            //while loop where hasNext() checks to see if there
+            while (checker.hasNext()) {
+                
+                //copied from given code, only changing the example string to whatever line the scanner is reading
+                String  ticket  = (checker.nextLine());                                 //ticket is set as string
+                String  last = ticket.substring(ticket.length() - 1);                   //index the last number in the ticket       
+                int     last_digit = Integer.valueOf(last);                             //converts indexed number to an integer
+                String  reduced_ticket = ticket.substring(0, ticket.length() - 1);      //creates a substring where the last digit is not included
+                int     ticket_number = Integer.valueOf(reduced_ticket);                //converts it to an integer
+                int     remainder = ticket_number % 7;                                  //modulo 7 to get a remainder
+                boolean validity = remainder == last_digit;                             //creates a boolean that returns true when remainder is equal to the last digit
+                String  format = "Original Ticket #: %s\nLast Digit: %d\nReduced Ticket #: %d\nRemainder: %d\nValidity: %b\n";  //message is formatted
+                
+                System.out.printf(format, ticket, last_digit, ticket_number, remainder, validity);  //prints the result
+                
+                //if statement using boolean previously defined
+                if (validity == true){
+                    validTix.write(ticket + '\n'); //this way only valid ticket #'s are written to the new file
+                    validTixCounter++;  //raises the counter by 1 to help keep track of the number of valid tickets
+                }
+
+                counter++;  //counter for total # of tickets
+            }
+
+            /*String  ticket  = "123454";                                           //ticket is set as string
+            String  last = ticket.substring(ticket.length() - 1);                   //index the last number in the ticket       
+            int     last_digit = Integer.valueOf(last);                             //converts indexed number to an integer
+            String  reduced_ticket = ticket.substring(0, ticket.length() - 1);      //creates a substring where the last digit is not included
+            int     ticket_number = Integer.valueOf(reduced_ticket);                //converts it to an integer
+            int     remainder = ticket_number % 7;                                  //modulo 7 to get a remainder
+            boolean validity = remainder == last_digit;                             //creates a boolean that returns true when remainder is equal to the last digit
+            String  format = "Original Ticket #: %s\nLast Digit: %d\nReduced Ticket #: %d\nRemainder: %d\nValidity: %b\n";  //message is formatted
+            System.out.printf(format, ticket, last_digit, ticket_number, remainder, validity);  //prints the result
+            */
+            
+            //message that prints to show user that the correct number of tickets are read and correct number is validated
+            System.out.println("Of the " + counter + " tickets processed, " + validTixCounter + " are valid");
+            
+            //Important to close the scanner and writer
+            validTix.close();
+            checker.close();
+            //ticketlist.close();
+        } //end of try
+        catch(FileNotFoundException fnf){
+            System.out.println("ERROR: File not found"); //message when file cannot be found
+        }//end of catch
+        catch(IOException e){
+            System.out.println("Error: File writing problem occured");
+        }//end of io catch
     }
 }
