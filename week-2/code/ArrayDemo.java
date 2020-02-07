@@ -32,11 +32,6 @@
 class ArrayDemo {
     public static void main(String[] args) {
         final int SIZE = 10;
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 89c473e11bc67fcf9abaff74a91a357822705798
         // declares an array of integers
         int[] anArray;
 

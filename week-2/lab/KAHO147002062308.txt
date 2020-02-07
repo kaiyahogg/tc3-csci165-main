@@ -1,0 +1,11 @@
+Invoice: KAHO147002062308
+Date: 02/06/2020
+Time: 23:08:06
+
+Chicken Shwarma Pita        80     3.99     319.20
+Freedom Fries               57     2.99     170.43
+Fermented Shark Juice        4     2.50     10.00
+
+Subtotal                      $499.63
+Sales Tax (6.25%)              $31.23
+Total                        $530.86
