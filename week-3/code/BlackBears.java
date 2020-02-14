@@ -51,6 +51,7 @@ public class BlackBears{
                     String[] values = line.split(",");
                     for(int j = 0; j < NUM_MONTHS; ++j){
                         sightings[i][j] = Integer.parseInt(values[j]);
+                        System.out.println(sightings[i][j]);
                     } // end inner for
                 } // end outer for
             scanner.close();
