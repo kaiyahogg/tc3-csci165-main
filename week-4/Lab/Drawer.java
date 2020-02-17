@@ -4,9 +4,14 @@ import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
-import java.util.Random;
+import java.util.*;
+import java.io.*;
+
+
 
 class Drawer extends JPanel {
+
+    final static int[][] matrix = new int [rowSnatcher(fileName)][columnSnatcher(fileName)];
 
     private static final long serialVersionUID = 1L;
     private JFrame window = new JFrame();
@@ -17,8 +22,8 @@ class Drawer extends JPanel {
 
     private void initUI() {
         window.add(this);
-        window.setTitle("2D Drawing");
-        window.setSize(500, 500);
+        window.setTitle("Elevation");
+        window.setSize(columnSnatcher(fileName), rowSnatcher(fileName));
         window.setLocationRelativeTo(null);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
@@ -29,6 +34,50 @@ class Drawer extends JPanel {
         super.paintComponent(g);
         doDrawing(g);
     }
+
+     /*              
+
+        ==================================================
+
+    */
+
+    public static columnSnatcher(String fileName){
+
+        //Substring to extract size of column to be used in matrix
+        String columns = fileName.substring(fileName.lastIndexOf("_") + 1, 
+        fileName.lastIndexOf("x"));
+
+        return columns;
+        
+
+    }
+
+    public static rowSnatcher(String fileName){
+        
+        //Substring to extract size of row to be used in matrix
+        String rows = strBig.substring(strBig.lastIndexOf("x")+1);
+
+        return rows;
+    }
+
+    public static void MapDataDrawer(String fileName, int rows, int columns){
+
+        //Try catch
+        try{
+
+            FileReader fr = new FileReader(fileName);
+            Scanner sc = new Scanner(fr);
+
+
+        }
+        catch(IOException ioe){
+            System.out.println(ioe.getMessage());
+        }
+
+
+
+    }
+
 
     private void doDrawing(Graphics g) {
 
@@ -85,13 +134,22 @@ class Drawer extends JPanel {
             g2d.drawLine(x, y, x + 2, y + 2);
         }
     }
+
+
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() { 
-                Drawer ex = new Drawer();
-                ex.setVisible(true);
-            }
-        });
+
+        if(args.length > 0){
+            fileName = args[0];
+            
+
+            EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() { 
+                    Drawer ex = new Drawer();
+                    ex.setVisible(true);
+                }
+            });
+        }
+        else System.out.println("No file name specified. Program is terminated.");
     } // end main
 } // end class

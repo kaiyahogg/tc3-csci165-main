@@ -336,5 +336,7 @@ public class HW4{
         
         System.out.println("\nIndex of row with least amount of change relative to the initial value: " + smallestChange(twoDimensional));
         System.out.println("Index of row with lesat amount of overrall change: " + smallestChangeOverrall(twoDimensional));
+
+        input.close();
     }
 }
