@@ -1,4 +1,4 @@
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class RadioDriver{
 
@@ -8,12 +8,13 @@ public class RadioDriver{
         Radio       radio1      = new Radio();
         Radio       radio2      = new Radio(Radio.Band.FM, Radio.FM_SPECTRUM[1]);
         Radio       radio3      = new Radio(Radio.Band.FM, Radio.FM_SPECTRUM[1]);
-        BadRadio    bad_radio   = new BadRadio();
+        Radio       radio4      = new Radio(Radio.Band.AM, Radio.AM_SPECTRUM[0]);
+        //BadRadio    bad_radio   = new BadRadio();
 
-        bad_radio.on = true;
-        bad_radio.volume = 9001;
-        bad_radio.channel = -1100;
-        System.out.println(bad_radio);
+        //bad_radio.on = true;
+        //bad_radio.volume = 9001;
+        //bad_radio.channel = -1100;
+        System.out.println(radio4);
 
         //radio.volume = 9001;
 

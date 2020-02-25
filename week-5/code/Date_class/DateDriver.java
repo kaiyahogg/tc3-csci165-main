@@ -8,8 +8,6 @@ public class DateDriver{
         String month = Date.months[1];
         System.out.println("The second month is: " + month);
 
-        int day = Date.getDay();
-
         System.out.println("\nd1 is: " + d1);
         System.out.println("d2 is: " + d2);
 
@@ -20,7 +18,7 @@ public class DateDriver{
         System.out.println("d2 is: " + d2);
 
 
-//        System.out.println(date);
+        //System.out.println(date);
         
         /*
         // set d to 1/2/2020

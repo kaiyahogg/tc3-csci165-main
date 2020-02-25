@@ -7,22 +7,14 @@ public class Radio{
     public static final int     VOLUME_MAX  = 30;
     public static final int     VOLUME_MIN  = 0;   
 
-<<<<<<< HEAD
-    // class features
-    public static enum  Band{AM, FM};
-    public static final int[] AM_SPECTRUM = {535, 1700};
-    public static final int[] FM_SPECTRUM = {88, 108};
-
     // instance features
     //Object state
     //Class level
-=======
     // non-static instance features
     // each instance will get unique copies of these variables
     // this information should be hidden from public access
->>>>>>> upstream/master
     private int     volume  = 0;
-    private boolean on      = false;
+    private boolean on      = true;
     private Band    band    = Band.FM;
     private double  channel = FM_SPECTRUM[0];
 
