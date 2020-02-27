@@ -73,11 +73,11 @@ public class Temperature{
 
     //toString method
     //@Override
-    public String toString(Degrees degrees){
+    public String toString(){
 
         //Defining local variables
         String weather = "";
-        //Degrees degrees = Degrees.F;
+        Degrees degrees = Degrees.F;
         
         if (degrees == Degrees.C) weather = "Temperature outside is: " + this.temp + "C. Converting to F: " + getFahrenheit() + ". Is equal: "
             + equals(getFahrenheit())+ " " + compareTo(getFahrenheit());
