@@ -1,10 +1,10 @@
 //Election driver
-
+/*
 import java.io.*;
 import java.util.*;
-
+*/
 public class ElectionDriver{
-
+/*
     public String [][] array = new String[3140][9];
 
     public void fillList(){
@@ -53,9 +53,12 @@ public class ElectionDriver{
     //public String[] getStateTotals(){
 
     //}
-
+        */
     public static void main(String [] args){
-        System.out.println(array[1][5]);
+        
+        CountyResults2016 cr = new CountyResults2016();
+        cr.fillArray(CountyResults2016.array);
+        System.out.println(cr.toString(0));
         //System.out.println(findLargestMargin());
     }
 }
