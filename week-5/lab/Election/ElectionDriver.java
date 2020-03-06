@@ -57,8 +57,8 @@ public class ElectionDriver{
     public static void main(String [] args){
         
         CountyResults2016 cr = new CountyResults2016();
-        cr.fillArray(CountyResults2016.array);
-        System.out.println(cr.toString(0));
+        cr.fillArray(CountyResults2016.electionResults);
+        System.out.println(cr.toString(1));
         //System.out.println(findLargestMargin());
     }
 }

@@ -16,7 +16,7 @@ public class CountyResults2016{
     public String county;
     private int fips;
 
-    public static String[][] array = new String[3140][10];
+    public static String[][] electionResults = new String[3140][10];
 
     public CountyResults2016() {
     }
@@ -24,17 +24,19 @@ public class CountyResults2016{
     public void fillArray(String[][] array) {
 
         try {
-            BufferedReader fr = new BufferedReader(new FileReader("2016_US_County_Level_Presidential_Results.txt"));
-            //Scanner sc = new Scanner(fr);
-            List<String> lines = new ArrayList<String>();
-            String line;
-                while((line = fr.readLine()) != null) {
-                    lines.add(line);
+            FileReader fr = (new FileReader("2016_US_County_Level_Presidential_Results.csv"));
+            Scanner sc = new Scanner(fr);
+            for(int i = 0; i < 3140; i++){
+                for(int j = 0; j < 10; j++){
+                    while(sc.hasNext()){
+                        electionResults[i][j] += sc.next();
+                    }
                 }
+            }
                 
 
             fr.close();
-            //sc.close();
+            sc.close();
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
@@ -99,10 +101,10 @@ public class CountyResults2016{
     //@Override
     public String toString(int i){
         
-        String results = ("Total: " + getTotalVotes(array, i) + "\nDem votes: " + getDemVotes(array, i) + 
-        "\nGOP votes: " + getGOPVotes(array, i) + "\nDifference: " + getDifference(array, i) +  
-        "\nPercentage of Difference: " + getPercentDifference(array, i) + "\nState: " 
-        + getState(array, i) + "\nCounty: " + getCounty(array, i));
+        String results = ("Total: " + getTotalVotes(electionResults, i) + "\nDem votes: " + getDemVotes(electionResults, i) + 
+        "\nGOP votes: " + getGOPVotes(electionResults, i) + "\nDifference: " + getDifference(electionResults, i) +  
+        "\nPercentage of Difference: " + getPercentDifference(electionResults, i) + "\nState: " 
+        + getState(electionResults, i) + "\nCounty: " + getCounty(electionResults, i));
 
         return results;
     }
