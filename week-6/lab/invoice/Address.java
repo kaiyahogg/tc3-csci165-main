@@ -7,48 +7,57 @@ public class Address{
 
     Address(){}
 
+    //copy constructor
+    Address(Address copy){
+        
+        this.street = copy.street;
+        this.city = copy.city;
+        this.state = copy.state;
+        this.zip = copy.zip;
+    }
+
     Address(String street, String city, String state, String zip){
         setStreet(street);
-        getCity();
-        getState();
+        //getCity();
+        //getState();
         setZip(zip);
     }
 
     public void setStreet(String street){
 
-        this.street = new Address().street;
+        this.street = street;
     }
 
     public String getStreet(){
         
-        return new Address().street;
+        return street;
     }
 
     public String getCity(){
         
-        return new Address().city;
+        return city;
     }
 
     public String getState(){
 
-        return new Address().state;
+        return state;
     }
 
     public void setZip(String zip){
         
-        this.zip = new Address().zip;
+        this.zip = zip;
     }
 
     public String getZip(){
 
-        return new Address().zip;
+        return zip;
     }
 
     public boolean equals(Address otherAddress){
-        return this.street == otherAddress.street &&
-                this.city == otherAddress.city &&
-                this.state == otherAddress.state &&
-                this.zip == otherAddress.zip;
+        return this.street.equals(otherAddress.street) &&
+                this.city.equals(otherAddress.city) &&
+                this.state.equals(otherAddress.state) &&
+                this.zip.equals(otherAddress.zip);
     }
 
     @Override
