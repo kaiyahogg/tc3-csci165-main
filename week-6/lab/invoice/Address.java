@@ -1,9 +1,17 @@
+import java.util.*;
+import java.io.*;
+
 public class Address{
+
+    //Fields
 
     private String street;
     private String city;
     private String state;
     private String zip;
+    //private HashMap<String,String> postalHash = new HashMap<String,String>();
+
+    //Constructors
 
     Address(){}
 
@@ -18,15 +26,54 @@ public class Address{
 
     Address(String street, String city, String state, String zip){
         setStreet(street);
-        //getCity();
-        //getState();
+        this.city = city;
+        this.state = state;
         setZip(zip);
     }
+
+    Address(String street, String zip){
+        setStreet(street);
+        this.city = getCity();
+        this.state = getState();
+        setZip(zip);
+    }
+
+    //Method that parses through zip csv
+   
+   /*
+    private HashMap<String,String> fillPostalHash(){
+
+        try{
+            File file = new File("zip_code_database.csv");
+            Scanner sc = new Scanner(file);
+
+            for(int i = 0; sc.hasNext(); i++){
+
+                
+            }
+
+            sc.close();
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Unable to locate file");
+        }
+        
+        return matrix;
+    } */
+
+    //Setters
 
     public void setStreet(String street){
 
         this.street = street;
     }
+
+    public void setZip(String zip){
+        
+        this.zip = zip;
+    }
+
+    //Getters
 
     public String getStreet(){
         
@@ -39,19 +86,16 @@ public class Address{
     }
 
     public String getState(){
-
+       
         return state;
-    }
-
-    public void setZip(String zip){
-        
-        this.zip = zip;
     }
 
     public String getZip(){
 
         return zip;
     }
+
+    //equals and toString methods
 
     public boolean equals(Address otherAddress){
         return this.street.equals(otherAddress.street) &&
@@ -60,10 +104,10 @@ public class Address{
                 this.zip.equals(otherAddress.zip);
     }
 
-    @Override
+    //@Override
     public String toString(){
         
-        String address = street + ", " + city + ", " + state + ", " + zip;
+        String address = street + ", " + state + ", " + city + ", " + zip;
 
         return address;
     }

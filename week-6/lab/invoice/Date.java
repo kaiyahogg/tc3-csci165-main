@@ -85,7 +85,17 @@ public class Date{
     } // end getYear
 
     public String toString(){
-        return month + "/" + day + "/" + year;
+        
+        String monthStr = "" + month;
+        String dayStr = "" + day;
+        if (month < 10){
+            monthStr = "0" + month;
+        }
+        if (day < 10){
+            dayStr = "0" + day;
+        }
+        String message = monthStr + "/" + dayStr + "/" + year;
+        return message;
     }
 
     public boolean equals(Date d){

@@ -1,4 +1,3 @@
-
 public class Employee{
 
     private String  firstName;
@@ -9,7 +8,7 @@ public class Employee{
     private Date    hireDate;
     private Date    dateTerminated;
     
-    public Employee() {}
+    public Employee(){}
     
 	public Employee(String firstName, String lastName, String ssn, String title, 
 					double salary, Date hireDate, Date dateTerminated) {
