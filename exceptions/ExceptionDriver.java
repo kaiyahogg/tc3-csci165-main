@@ -6,7 +6,7 @@ public class ExceptionDriver {
         DeepCallStack dcs = new DeepCallStack();
         dcs.methodA();
 
-        /*Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Enter numerator: ");
         double n = keyboard.nextInt();
@@ -19,7 +19,7 @@ public class ExceptionDriver {
         }catch(DivisionByZeroException dbz){
             System.out.println(dbz.getMessage());
         }
-        */
+        
 
     }
 

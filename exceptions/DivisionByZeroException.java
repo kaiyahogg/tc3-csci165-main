@@ -1,7 +1,12 @@
 
 public class DivisionByZeroException extends Exception
 {
-    public DivisionByZeroException( )
+    /**
+     *
+     */
+    //private static final long serialVersionUID = 1L;
+
+    public DivisionByZeroException()
     {
         super("Division by Zero!");
     }
