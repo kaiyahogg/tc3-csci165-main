@@ -50,7 +50,7 @@ public class Hobbit extends Creature{
 
     @Override
     public void attack(Creature c){
-        System.out.println("attack successful (Hobbit)");
+        //System.out.println("attack successful (Hobbit)");
         if(c instanceof Vegetation){
             c.equip(new Food());
             c.setHealth(c.getHealth()-this.attack);
@@ -131,26 +131,26 @@ public class Hobbit extends Creature{
         
         if(rand == 1){ 
             moveUp();
-            System.out.println("up");
+            //System.out.println("up");
         }
         else if(rand == 2){ 
             moveDown();
-            System.out.println("down");
+            //System.out.println("down");
         }
 
         else if(rand == 3){ 
             moveRight();
-            System.out.println("right");
+            //System.out.println("right");
         }
         else{ 
             moveLeft();
-            System.out.println("left");
+            //System.out.println("left");
         }
     }
 
     @Override
     public void chooseAction(){
-        System.out.println("chooseAction successful (Hobbit)");
+        //System.out.println("chooseAction successful (Hobbit)");
         Map.locationOf(this);
         int x = locationPoint[0]; int y = locationPoint[1];
 
@@ -225,7 +225,7 @@ public class Hobbit extends Creature{
 
     @Override
     public Color color(){
-        System.out.println("color successful (Hobbit)");
+        //System.out.println("color successful (Hobbit)");
 
         if (health > 67) return Color.BLUE;
         if (health > 33) return Color.YELLOW;

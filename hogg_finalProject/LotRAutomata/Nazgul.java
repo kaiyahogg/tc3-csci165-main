@@ -49,15 +49,15 @@ public class Nazgul extends Creature{
     //Should add to hunger value
     @Override
     public void attack(Creature c){
-        System.out.println("attack successful (Nazgul)");
+        //System.out.println("attack successful (Nazgul)");
         if(c instanceof Vegetation){
-            c.equip(new Food());
+            this.equip(new Food());
             c.setHealth(c.getHealth()-this.attack);
         }
         else{
             c.setHealth(c.getHealth()-this.attack);
-            setHealth(this.health - c.getAttack());
-            equip(new Food());
+            this.setHealth(this.health - c.getAttack());
+            this.equip(new Food());
         }
     }
 
@@ -129,26 +129,26 @@ public class Nazgul extends Creature{
         
         if(rand == 1){ 
             moveUp();
-            System.out.println("up");
+            //System.out.println("up");
         }
         else if(rand == 2){ 
             moveDown();
-            System.out.println("down");
+            //System.out.println("down");
         }
 
         else if(rand == 3){ 
             moveRight();
-            System.out.println("right");
+            //System.out.println("right");
         }
         else{ 
             moveLeft();
-            System.out.println("left");
+            //System.out.println("left");
         }
     }
 
     @Override
     public void chooseAction(){
-        System.out.println("chooseAction successful (Nazgul)");
+        //System.out.println("chooseAction successful (Nazgul)");
         Map.locationOf(this);
         int x = locationPoint[0]; int y = locationPoint[1];
 
@@ -179,7 +179,7 @@ public class Nazgul extends Creature{
                 else if(Map.world[x-10][y] instanceof Hobbit || Map.world[x-10][y] instanceof Vegetation){ 
                     moveLeft();
                     attack(Map.world[x-10][y]);
-                    if(Map.world[x-10][y] instanceof Hobbit)hunger++;
+                    if(Map.world[x-10][y] instanceof Hobbit) hunger++;
                 }
                 else{ 
                     chooseMove();
@@ -201,7 +201,7 @@ public class Nazgul extends Creature{
 
     @Override
     public Color color(){
-        System.out.println("Color successful (Nazgul)");
+        //System.out.println("Color successful (Nazgul)");
         if (health > 100) return Color.GRAY;
         else if (health > 50) return Color.ORANGE;
         else if (health > 0) return Color.RED;

@@ -2,8 +2,8 @@ import java.awt.*;
 public class Sauron extends Creature{
 
     /*
-        Spawns if 10-15 Nazguls exist. Gets hungry and devours
-        all of Middle-Earth the following turn. Should be a rare spawn.
+        Spawns at seeding. Gets hungry and devours
+        all of Middle-Earth the following turn.
     */
 
     //Values should be absurd, could be defeated if hobbits get ahold of certain items
@@ -54,7 +54,7 @@ public class Sauron extends Creature{
 
     @Override
     public void attack(Creature c){
-        System.out.println("attack successful (Sauron)");
+        //System.out.println("attack successful (Sauron)");
         c.setHealth(c.getHealth()-this.attack);
         //setHealth(this.health - c.getAttack());
     }
@@ -73,18 +73,15 @@ public class Sauron extends Creature{
 
     @Override
     public void stay(){
-        System.out.println("stay successful (Sauron)");
+        //System.out.println("stay successful (Sauron)");
     }
-    
-    @Override
-    public void chooseReplication(){}
 
     @Override
     public void chooseMove(){}
 
     @Override
     public void chooseAction(){
-        System.out.println("chooseAction successful (Sauron)");
+        //System.out.println("chooseAction successful (Sauron)");
         if(hunger == 0){
             for(int x = 10; x < 490; x++){
                 for(int y = 10; y < 490; y++){
@@ -101,7 +98,7 @@ public class Sauron extends Creature{
 
     @Override
     public Color color(){
-        System.out.println("Color succesful (Sauron)");
+        //System.out.println("Color succesful (Sauron)");
         if (health/100 > 0.67) return Color.BLACK;
         else if (health/100>0.33) return Color.YELLOW;
         else if (health/100>0) return Color.RED;

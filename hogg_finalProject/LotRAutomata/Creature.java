@@ -63,46 +63,24 @@ public abstract class Creature{
             && x>=10 && x<490){ 
             if(rand == 1){ 
                 replicateUp();
-                System.out.println("up");
+                //System.out.println("up");
             }
             else if(rand == 2){ 
                 replicateDown();
-                System.out.println("down");
+                //System.out.println("down");
             }
 
             else if(rand == 3){ 
                 replicateRight();
-                System.out.println("right");
+                //System.out.println("right");
             }
             else{ 
                 replicateLeft();
-                System.out.println("left");
+                //System.out.println("left");
             }
         }
        
     }
-
-    /*public void chooseMove(){
-        int rand = getRandom();
-        
-        if(rand == 1){ 
-            moveUp();
-            System.out.println("up");
-        }
-        else if(rand == 2){ 
-            moveDown();
-            System.out.println("down");
-        }
-
-        else if(rand == 3){ 
-            moveRight();
-            System.out.println("right");
-        }
-        else{ 
-            moveLeft();
-            System.out.println("left");
-        }
-    }*/
 
     public abstract void chooseMove();
 
@@ -120,7 +98,6 @@ public abstract class Creature{
 
     public abstract void attack(Creature c);
 
-    //public abstract Creature replicate();
     public abstract void replicateUp();
 
     public abstract void replicateDown();
@@ -130,8 +107,6 @@ public abstract class Creature{
     public abstract void replicateLeft();
 
     public abstract void stay();
-
-    //public abstract void chooseReplication();
 
     public abstract void chooseAction();
 

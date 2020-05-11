@@ -55,7 +55,7 @@ public class Vegetation extends Creature{
 
     @Override
     public void attack(Creature c){
-        System.out.println("attack successful (Vegetation)");
+        //System.out.println("attack successful (Vegetation)");
     }
 
     @Override
@@ -116,7 +116,7 @@ public class Vegetation extends Creature{
 
     @Override
     public void stay(){
-        System.out.println("stay successful (Vegetation)");
+        //System.out.println("stay successful (Vegetation)");
     }
 
     @Override
@@ -124,7 +124,7 @@ public class Vegetation extends Creature{
     
     @Override
     public void chooseAction(){
-        System.out.println("chooseAction successful (Vegetation)");
+        //System.out.println("chooseAction successful (Vegetation)");
         Map.locationOf(this);
         if(locationPoint[1]>=10 
             && locationPoint[1]<490 
@@ -141,7 +141,7 @@ public class Vegetation extends Creature{
 
     @Override
     public Color color(){
-        System.out.println("Color succesful (Vegetation)");
+        //System.out.println("Color succesful (Vegetation)");
         if (health/1 > 0.67) return Color.GREEN;
         else if (health/1>0.33) return Color.YELLOW;
         else if (health/1>0) return Color.RED;
