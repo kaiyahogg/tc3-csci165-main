@@ -1,9 +1,9 @@
 
 public class Food extends Item{
 
-    private int attackBuff;
-    private int healthBuff;
-    private int hungerBuff;
+    private int attackBuff = 0;
+    private int healthBuff = 0;
+    private int hungerBuff = 3;
 
     @Override
     public int getAttackBuff(){
@@ -21,17 +21,7 @@ public class Food extends Item{
     }
 
     @Override
-    public void setAttackBuff(int attackB){
-        attackBuff = getAttackBuff();
-    }
-
-    @Override
-    public void setHealthBuff(int healthB){
-        healthBuff = getAttackBuff();
-    }
-
-    @Override
-    public void setHungerBuff(int healthB){
-        hungerBuff = getHungerBuff() + 3;
+    public String toString(){
+        return "Food: " + hungerBuff + " food";
     }
 }

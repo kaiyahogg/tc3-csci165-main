@@ -144,15 +144,15 @@ class Drawer extends JPanel {
         // figuring out how many values from matrix works with one unit of color values
         double divisorDouble = Math.round(numerator / 255);
         int divisor = (int) divisorDouble;
-        
+        Color grayscale;
         // nested for loop that iterates through the matrix
         for (int i = 0; i < columns; ++i) {
 
             y = 0;
             for (int j = 0; j < rows-1; ++j) {
-
+                grayscale = new Color((matrix[j][i] - min) / (divisor+1), (matrix[j][i] - min) / (divisor+1), (matrix[j][i] - min) / (divisor+1));
                 // assigning the color to be filled
-                g2d.setColor(new Color((matrix[j][i] - min) / (divisor+1), 0, 0));
+                g2d.setColor(grayscale);
 
                 // filling the rectangle with the assigned color
                 g2d.fillRect(x, y, 1, 1);
@@ -470,13 +470,11 @@ class Drawer extends JPanel {
             
 
 
-            EventQueue.invokeLater(new Runnable() {
-                @Override
-                public void run() { 
-                    Drawer ex = new Drawer(fileName);
-                    ex.setVisible(true);
-                }
-            });
+            EventQueue.invokeLater(() -> {
+            
+                Drawer ex = new Drawer(fileName);
+                ex.setVisible(true);
+            })
 
             
         }

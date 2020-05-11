@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b08046c-bb35-4c16-ae6b-69beeac2de6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Armor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hobbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hobbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nazgul.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nazgul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sauron.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sauron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vegetation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vegetation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week-4/Lab/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week-4/Lab/Drawer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1bk96h80Wyjn7y0HPGMDxzmP1dl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b08046c-bb35-4c16-ae6b-69beeac2de6e" name="Default Changelist" comment="" />
+      <created>1589165050159</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589165050159</updated>
+      <workItem from="1589165051564" duration="127000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

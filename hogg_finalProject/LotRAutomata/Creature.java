@@ -1,30 +1,141 @@
-public interface Creature{
+import java.awt.*;
+import java.util.*;
 
-    public int getHealth();
+public abstract class Creature{
+    ArrayList<Item> inventory = new ArrayList<Item>();
+    int[] locationPoint = new int[2];
 
-    public int getAttack();
+    public Creature(){}
 
-    public int getHunger();
+    public int getRandom(){
+        int random = (int)Math.floor((Math.random()*4)+1);
+        return random;
+    }
 
-    public void setHealth(int h);
+    public void equip(Item i){
+        if(this.equipable() == true){
+            this.setAttack(this.getAttack() + i.getAttackBuff());
+            this.setHealth(this.getHealth() + i.getHealthBuff());
+            this.setHunger(this.getHunger() + i.getHungerBuff());
+            inventory.add(i);
+        }
+        else System.out.println("Creature cannot equip items");
+    }
 
-    public void setAttack(int a);
+    public void moveUp(){
+        Map.locationOf(this);
+        int x = locationPoint[0];
+        int y = locationPoint[1];
+        Map.world[x][y] = null;
+        Map.world[x][y-10] = this;
+    }
 
-    public void setHunger(int h);
+    public void moveDown(){
+        Map.locationOf(this);
+        int x = locationPoint[0];
+        int y = locationPoint[1];
+        Map.world[x][y] = null;
+        Map.world[x][y+10] = this;
+    }
+    
+    public void moveRight(){
+        Map.locationOf(this);
+        int x = locationPoint[0];
+        int y = locationPoint[1];
+        Map.world[x][y] = null;
+        Map.world[x+10][y] = this;
+    }
+    
+    public void moveLeft(){
+        Map.locationOf(this);
+        int x = locationPoint[0];
+        int y = locationPoint[1];
+        Map.world[x][y] = null;
+        Map.world[x-10][y] = this;
+    }
 
-    public void move();
+    public void chooseReplication(){
+        int rand = getRandom();
+        Map.locationOf(this);
+        int x = locationPoint[0]; int y = locationPoint[1];
+        
+        if(y>=10 && y<490 
+            && x>=10 && x<490){ 
+            if(rand == 1){ 
+                replicateUp();
+                System.out.println("up");
+            }
+            else if(rand == 2){ 
+                replicateDown();
+                System.out.println("down");
+            }
 
-    public void attack(Creature c);
+            else if(rand == 3){ 
+                replicateRight();
+                System.out.println("right");
+            }
+            else{ 
+                replicateLeft();
+                System.out.println("left");
+            }
+        }
+       
+    }
 
-    public Creature replicate();
+    /*public void chooseMove(){
+        int rand = getRandom();
+        
+        if(rand == 1){ 
+            moveUp();
+            System.out.println("up");
+        }
+        else if(rand == 2){ 
+            moveDown();
+            System.out.println("down");
+        }
 
-    public void stay();
+        else if(rand == 3){ 
+            moveRight();
+            System.out.println("right");
+        }
+        else{ 
+            moveLeft();
+            System.out.println("left");
+        }
+    }*/
 
-    //Decision map needs implementation
-    public void chooseAction();
+    public abstract void chooseMove();
 
-    //Color needs proper implementation
-    public void color();
+    public abstract int getHealth();
 
-    public boolean equipable();
+    public abstract int getAttack();
+
+    public abstract int getHunger();
+
+    public abstract void setHealth(int h);
+
+    public abstract void setAttack(int a);
+
+    public abstract void setHunger(int h);
+
+    public abstract void attack(Creature c);
+
+    //public abstract Creature replicate();
+    public abstract void replicateUp();
+
+    public abstract void replicateDown();
+
+    public abstract void replicateRight();
+
+    public abstract void replicateLeft();
+
+    public abstract void stay();
+
+    //public abstract void chooseReplication();
+
+    public abstract void chooseAction();
+
+    public abstract Color color();
+
+    public abstract boolean equipable();
 }
