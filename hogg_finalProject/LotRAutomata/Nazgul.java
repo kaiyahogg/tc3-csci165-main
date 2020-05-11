@@ -50,9 +50,15 @@ public class Nazgul extends Creature{
     @Override
     public void attack(Creature c){
         System.out.println("attack successful (Nazgul)");
-        c.setHealth(c.getHealth()-this.attack);
-        setHealth(this.health - c.getAttack());
-        if(c instanceof Hobbit) equip(new Food());
+        if(c instanceof Vegetation){
+            c.equip(new Food());
+            c.setHealth(c.getHealth()-this.attack);
+        }
+        else{
+            c.setHealth(c.getHealth()-this.attack);
+            setHealth(this.health - c.getAttack());
+            equip(new Food());
+        }
     }
 
 

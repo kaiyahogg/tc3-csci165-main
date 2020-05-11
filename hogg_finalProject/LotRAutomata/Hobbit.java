@@ -51,9 +51,15 @@ public class Hobbit extends Creature{
     @Override
     public void attack(Creature c){
         System.out.println("attack successful (Hobbit)");
-        c.setHealth(c.getHealth()-this.attack);
-        setHealth(this.health - c.getAttack());
-        if(c instanceof Vegetation) c.equip(new Food()); 
+        if(c instanceof Vegetation){
+            c.equip(new Food());
+            c.setHealth(c.getHealth()-this.attack);
+        }
+        else{ 
+            c.setHealth(c.getHealth()-this.attack);
+            setHealth(this.health - c.getAttack());
+        }
+         
     }
 
     @Override
